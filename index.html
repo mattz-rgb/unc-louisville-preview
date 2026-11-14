@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNC vs Louisville: Pre-Game Breakdown</title>
+<meta name="description" content="A position-by-position pre-game breakdown of North Carolina vs Louisville (Nov. 14, 2026, Kenan Stadium), from the Tar Heels' perspective.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070c16;
+  --bg2:#0c1423;
+  --panel:#111b2e;
+  --panel2:#16233a;
+  --line:rgba(255,255,255,.09);
+  --text:#e7edf7;
+  --muted:#9aa9c2;
+  --unc:#7bafd4;
+  --unc-deep:#13294b;
+  --lou:#e0364d;
+  --lou-deep:#7a0f1f;
+  --gold:#f2c14e;
+  --ok:#4cc38a;
+  --warn:#f2c14e;
+  --bad:#ef5b6b;
+  --radius:16px;
+  --display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 500px at 15% -5%,rgba(123,175,212,.12),transparent 60%),radial-gradient(1000px 500px at 100% 0%,rgba(224,54,77,.10),transparent 60%);
+  background-repeat:no-repeat}
+a{color:var(--unc);text-decoration:none;border-bottom:1px solid rgba(123,175,212,.35)}
+a:hover{border-bottom-color:var(--unc)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--unc),var(--lou));z-index:100}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(7,12,22,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;border:0;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:7px 12px;border-radius:999px;transition:.2s}
+.nav a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav a.active{color:#fff;background:linear-gradient(135deg,rgba(123,175,212,.28),rgba(224,54,77,.22));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px);mask-image:linear-gradient(180deg,#000 40%,transparent);-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent)}
+.hero-inner{position:relative;max-width:1100px;margin:0 auto;padding:64px 20px 56px}
+.kicker{font-family:var(--display);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-size:15px}
+h1{font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;margin:10px 0 14px;font-size:clamp(46px,9vw,104px);letter-spacing:.005em}
+h1 .u{color:var(--unc)} h1 .l{color:var(--lou)} h1 .vs{color:var(--muted);font-size:.5em;vertical-align:middle;padding:0 .2em}
+.sub{max-width:680px;color:var(--muted);font-size:19px;margin:0 0 28px}
+.byline{color:var(--muted);font-size:14px;margin-bottom:30px}
+.byline b{color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:14px;font-weight:600}
+.chip i{font-style:normal;color:var(--muted);font-weight:500}
+.scoreboard{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.team{padding:26px 28px;position:relative}
+.team.u{background:linear-gradient(135deg,var(--unc-deep),#1b3c6b)}
+.team.l{background:linear-gradient(225deg,var(--lou-deep),#a8182b);text-align:right}
+.team .tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.8}
+.team .name{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,52px);text-transform:uppercase;line-height:1;margin:6px 0}
+.team .rec{font-family:var(--display);font-weight:600;font-size:22px}
+.team .rec small{font-size:15px;opacity:.75;font-family:var(--body);font-weight:500}
+.team .last{margin-top:10px;font-size:13px;opacity:.85;line-height:1.5}
+.mid{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 22px;background:var(--bg2);text-align:center;gap:2px}
+.mid .d{font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+.mid .t{color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.mid .line{margin-top:10px;font-size:13px;color:var(--gold);font-weight:700}
+
+/* LAYOUT */
+main{max-width:860px;margin:0 auto;padding:30px 20px 100px}
+section{padding-top:56px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+.sec-no{font-family:var(--display);font-weight:700;color:var(--muted);letter-spacing:.2em;font-size:14px;text-transform:uppercase}
+h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,5.5vw,52px);line-height:1;margin:2px 0 0;letter-spacing:.01em}
+.lede{font-size:20px;line-height:1.55;color:#fff;font-weight:500;margin:0 0 22px;padding-left:18px;border-left:3px solid var(--gold)}
+p{margin:0 0 18px;color:#d6dfee}
+p strong,li strong{color:#fff}
+.edge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line)}
+.edge b{font-weight:600;letter-spacing:.06em;opacity:.7;text-transform:none;font-size:12px}
+.edge.unc{background:rgba(123,175,212,.15);color:var(--unc);border-color:rgba(123,175,212,.4)}
+.edge.lou{background:rgba(224,54,77,.14);color:#ff7b8c;border-color:rgba(224,54,77,.4)}
+.edge.even{background:rgba(242,193,78,.12);color:var(--gold);border-color:rgba(242,193,78,.4)}
+
+/* TILES */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:0 0 26px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:relative;overflow:hidden}
+.tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--muted)}
+.tile.u::before{background:var(--unc)} .tile.l::before{background:var(--lou)}
+.tile .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tile .v{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.1;margin:4px 0 2px;color:#fff}
+.tile .s{font-size:13px;color:var(--muted);line-height:1.4}
+
+/* COMPARE */
+.compare{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:6px 0 10px}
+.compare h3,.panel h3{margin:0 0 12px;font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:18px;color:var(--muted);font-weight:700}
+.cmp-head{display:grid;grid-template-columns:1fr 150px 1fr;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:20px;margin-bottom:6px}
+.cmp-head span:first-child{color:var(--unc)} .cmp-head span:last-child{color:#ff7b8c;text-align:right}
+.row{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.row .lbl{text-align:center;font-size:12px;color:var(--muted);line-height:1.3;font-weight:600;letter-spacing:.02em}
+.row .lbl em{display:block;font-style:normal;font-size:10.5px;opacity:.7;letter-spacing:.08em;text-transform:uppercase}
+.cell{display:flex;align-items:center;gap:10px}
+.cell.r{flex-direction:row-reverse}
+.bar{flex:1;height:10px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;display:flex}
+.cell.l .bar{justify-content:flex-end}
+.bar span{display:block;height:100%;border-radius:99px}
+.cell.l .bar span{background:linear-gradient(90deg,#3a6c93,var(--unc))}
+.cell.r .bar span{background:linear-gradient(90deg,#ff7b8c,#a8182b)}
+.val{font-family:var(--display);font-weight:700;font-size:21px;min-width:62px;color:#c6d1e4}
+.cell.l .val{text-align:right} .cell.r .val{text-align:left}
+.val small{display:block;font-family:var(--body);font-weight:500;font-size:11px;color:var(--muted);margin-top:-2px}
+.win .val{color:#fff}
+.note{font-size:13px;color:var(--muted);margin:10px 2px 0}
+
+/* LINEUPS */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.panel.u{border-top:3px solid var(--unc)} .panel.l{border-top:3px solid var(--lou)}
+.panel h3 .tg{float:right;font-size:12px;letter-spacing:.12em}
+.dc{display:grid;grid-template-columns:62px 1fr;gap:5px 12px;font-size:14.5px;line-height:1.45}
+.dc dt{font-family:var(--display);font-weight:700;color:var(--muted);letter-spacing:.08em;font-size:15px;text-transform:uppercase}
+.dc dd{margin:0;color:#e1e8f5}
+.dc .sub-h{grid-column:1/-1;margin-top:10px;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.st{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:1px 7px;border-radius:6px;margin-left:5px;vertical-align:1px}
+.st.out{background:rgba(239,91,107,.18);color:#ff8d99}
+.st.q{background:rgba(242,193,78,.18);color:var(--gold)}
+.st.p{background:rgba(76,195,138,.17);color:#7fe0b2}
+.inj{display:grid;gap:10px;font-size:14.5px}
+.inj h4{margin:0 0 4px;font-family:var(--display);letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+.inj h4.out{color:#ff8d99} .inj h4.q{color:var(--gold)} .inj h4.p{color:#7fe0b2}
+.inj ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.inj li{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:13px;color:#dbe4f3}
+.inj li.key{border-color:var(--gold);background:rgba(242,193,78,.12);color:#fff;font-weight:600}
+
+/* CALLOUT / LIST CARDS */
+.callout{background:linear-gradient(135deg,rgba(242,193,78,.10),rgba(242,193,78,.03));border:1px solid rgba(242,193,78,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 22px}
+.callout b{color:var(--gold)}
+.callout p{margin:0;color:#f3e7c4}
+.num{counter-reset:n;display:grid;gap:14px;margin:0 0 20px;padding:0;list-style:none}
+.num>li{counter-increment:n;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px 4px 66px;position:relative}
+.num>li::before{content:counter(n);position:absolute;left:18px;top:16px;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:22px;color:#06101e;background:linear-gradient(135deg,var(--unc),#bfe0f5)}
+.num.red>li::before{background:linear-gradient(135deg,#ff7b8c,var(--lou));color:#fff}
+.num>li p{margin:0 0 14px}
+.num>li .h{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-weight:700;font-size:20px;color:#fff;margin-bottom:4px}
+
+/* PICK */
+.pick{border-radius:24px;padding:34px 24px;text-align:center;background:radial-gradient(600px 240px at 20% 0%,rgba(123,175,212,.25),transparent 60%),radial-gradient(600px 240px at 80% 100%,rgba(224,54,77,.22),transparent 60%),var(--panel);border:1px solid var(--line);margin:0 0 24px}
+.pick .lab{font-family:var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;font-size:14px}
+.pick .score{display:flex;justify-content:center;align-items:center;gap:18px;font-family:var(--display);font-weight:800;line-height:1;margin:14px 0 6px;flex-wrap:wrap}
+.pick .score .t{font-size:clamp(20px,4vw,34px);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.pick .score .n{font-size:clamp(70px,14vw,140px)}
+.pick .score .n.u{color:var(--unc)} .pick .score .n.l{color:#ff7b8c}
+.pick .score .dash{color:var(--muted);font-size:clamp(40px,8vw,80px)}
+.pick .meta{color:var(--muted);font-size:14px}
+table.ls{width:100%;border-collapse:collapse;margin:0 0 8px;font-size:15px}
+table.ls th,table.ls td{padding:9px 12px;text-align:center;border-bottom:1px solid var(--line)}
+table.ls th{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+table.ls td:first-child,table.ls th:first-child{text-align:left;font-weight:700}
+table.ls tr.u td:first-child{color:var(--unc)} table.ls tr.l td:first-child{color:#ff7b8c}
+table.ls td.f{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+
+/* SOURCES */
+.src ul{margin:0 0 18px;padding-left:20px;color:#c3cee1;font-size:15px}
+.src li{margin:4px 0}
+.src h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:17px;margin:20px 0 6px}
+footer{border-top:1px solid var(--line);padding:30px 20px 60px;color:var(--muted);text-align:center;font-size:13px}
+.top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);color:#fff;display:grid;place-items:center;font-size:18px;opacity:0;pointer-events:none;transition:.25s;cursor:pointer}
+.top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .scoreboard{grid-template-columns:1fr}
+  .team.l{text-align:left}
+  .mid{flex-direction:row;gap:14px;padding:12px;flex-wrap:wrap}
+  .grid2{grid-template-columns:1fr}
+  .cmp-head,.row{grid-template-columns:1fr 92px 1fr}
+  .val{font-size:18px;min-width:46px}
+  .num>li{padding-left:58px}
+}
+@media print{
+  .nav,.progress,.top{display:none}
+  body{background:#fff;color:#111;font-size:12pt}
+  p{color:#222}
+  .panel,.tile,.compare,.num>li,.pick{background:#fff;border-color:#ccc}
+  h1,h2,.val,.tile .v{color:#000}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner" id="navlinks">
+    <a href="#overview">Overview</a>
+    <a href="#lineups">Lineups</a>
+    <a href="#qb">QB</a>
+    <a href="#rb">RB</a>
+    <a href="#rec">WR/TE</a>
+    <a href="#ol">OL</a>
+    <a href="#dl">DL</a>
+    <a href="#lb">LB</a>
+    <a href="#db">Secondary</a>
+    <a href="#st">ST &amp; Coaching</a>
+    <a href="#target">Target</a>
+    <a href="#concern">Concerns</a>
+    <a href="#flow">Game flow</a>
+    <a href="#pick">Pick</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Pre-game breakdown &middot; ACC &middot; Week 11</div>
+    <h1><span class="u">UNC</span><span class="vs">vs</span><span class="l">Louisville</span></h1>
+    <p class="sub">A position-by-position look at Saturday night in Chapel Hill, written from North Carolina's side of the ball.</p>
+    <div class="byline">By <b>Matthew Zammit</b> &middot; Written Nov. 10 &middot; Updated Nov. 14 with the ACC's Friday availability update and projected depth charts</div>
+    <div class="chips">
+      <span class="chip"><i>Kickoff</i> Sat, Nov. 14 &middot; 7:00 PM ET</span>
+      <span class="chip"><i>TV</i> ESPN2</span>
+      <span class="chip"><i>Site</i> Kenan Stadium</span>
+      <span class="chip"><i>Weather</i> 42&deg;F at kickoff</span>
+      <span class="chip"><i>Line</i> LOU -3.5 &middot; O/U 60.5</span>
+    </div>
+    <div class="scoreboard">
+      <div class="team u">
+        <div class="tag">North Carolina Tar Heels</div>
+        <div class="name">UNC</div>
+        <div class="rec">5-4 <small>(2-3 ACC)</small></div>
+        <div class="last">Last three: L 30-31 OT vs Syracuse &middot; L 35-38 vs No. 1 Miami &middot; W 38-21 at UConn</div>
+      </div>
+      <div class="mid">
+        <div class="d">NOV 14</div>
+        <div class="t">Chapel Hill, N.C.</div>
+        <div class="line">Louisville -3.5</div>
+      </div>
+      <div class="team l">
+        <div class="tag">Louisville Cardinals</div>
+        <div class="name">Louisville</div>
+        <div class="rec">6-3 <small>(5-2 ACC)</small></div>
+        <div class="last">Last three: W 34-26 at Syracuse &middot; W 52-24 vs Stanford &middot; W 44-17 at Georgia Tech</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="sec-head"><div><div class="sec-no">01</div><h2>The Two Teams</h2></div></div>
+  <p class="lede">Louisville is the better team on paper and the market treats it that way, which makes this a game about whether UNC's defense can disrupt the nation's eighth-ranked rushing attack.</p>
+  <p>The Cardinals are 3.5-point road favorites with a total of 60.5, after the line opened at 2.5 and moved toward the visitors. North Carolina (5-4, 2-3 ACC) hosts a Louisville team (6-3, 5-2) that has won four straight, scored at least 27 points in every game this season and at least 34 in each of the four wins. Kickoff is 7 p.m. ET Saturday on ESPN2 at Kenan Stadium, the first meeting between the schools since Louisville won 47-35 in Chapel Hill in 2017.</p>
+
+  <div class="compare">
+    <h3>Head to head &middot; through nine games</h3>
+    <div class="cmp-head"><span>UNC</span><span></span><span>Louisville</span></div>
+
+    <div class="row">
+      <div class="cell l"><div class="val">27.1<small>75th</small></div><div class="bar"><span style="width:66%"></span></div></div>
+      <div class="lbl">Points per game</div>
+      <div class="cell r win"><div class="val">40.8<small>6th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l win"><div class="val">22.8<small>51st</small></div><div class="bar"><span style="width:88%"></span></div></div>
+      <div class="lbl">Points allowed per game<em>lower is better</em></div>
+      <div class="cell r"><div class="val">25.9<small>78th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l"><div class="val">114.2<small>121st</small></div><div class="bar"><span style="width:50%"></span></div></div>
+      <div class="lbl">Rush yards per game</div>
+      <div class="cell r win"><div class="val">228.0<small>8th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l win"><div class="val">227.2<small>91st</small></div><div class="bar"><span style="width:85%"></span></div></div>
+      <div class="lbl">Pass yards allowed per game<em>lower is better</em></div>
+      <div class="cell r"><div class="val">265.9<small>130th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l win"><div class="val">34.3<small>6th</small></div><div class="bar"><span style="width:48%"></span></div></div>
+      <div class="lbl">Penalty yards per game<em>lower is better</em></div>
+      <div class="cell r"><div class="val">72.1<small>124th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l"><div class="val">-1<small>74th</small></div><div class="bar"><span style="width:8%"></span></div></div>
+      <div class="lbl">Turnover margin<em>higher is better</em></div>
+      <div class="cell r win"><div class="val">+7<small>14th</small></div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+    <div class="row">
+      <div class="cell l"><div class="val">6-3</div><div class="bar"><span style="width:100%"></span></div></div>
+      <div class="lbl">Against the spread</div>
+      <div class="cell r"><div class="val">6-3</div><div class="bar"><span style="width:100%"></span></div></div>
+    </div>
+  </div>
+  <div class="note">Rankings and per-game figures are through nine games. Bar lengths are scaled within each row and are not comparable between rows.</div>
+
+  <p style="margin-top:24px">The Tar Heels' season reads as two stories told by one scoreboard. In the five wins, they have allowed 21 points or fewer every time (TCU 10, ETSU 3, Pitt 17, Duke 20, UConn 21). In the four losses, the opponent has scored 28 or more every time (Clemson 28, Notre Dame 37, Syracuse 31 in overtime, Miami 38). Bill Belichick's second team has already passed last year's four-win total, and Bobby Petrino's arrival has repaired a good part of an offense that ranked 129th nationally in yards per game in 2025. The home record is the uncomfortable part: UNC is 1-3 at Kenan, with the only win coming against FCS East Tennessee State. One more win in the last three games (Louisville, at Virginia, NC State) makes the Tar Heels bowl-eligible.</p>
+
+  <p>Louisville's story is a correction. The Cardinals started 2-3, their worst start since Jeff Brohm arrived in 2023, with a 41-38 loss to Ole Miss in Nashville, a 30-27 home loss to Wake Forest and a 31-28 loss at NC State in which Wolfpack quarterback Bailey threw for a career-high 373 yards. Brohm then did something he had not done in 14 years: he handed play-calling to his brother, offensive coordinator Brian Brohm, and spent his own time helping first-year co-defensive coordinators Mark Ivey and Steve Ellis. The results since are 44-20 over Florida State, 34-26 at Syracuse, 52-24 over Stanford and 44-17 at Georgia Tech. Through nine games the Cardinals are sixth nationally in scoring (40.8 points), eighth in total offense (488.1 yards) and eighth in rushing (228.0 yards), and they entered the Georgia Tech game second in yards per carry.</p>
+
+  <p>The defense is the soft spot. Louisville ranks 130th nationally in passing yards allowed (265.9 per game, last in the ACC) and 112th in total yards allowed (404.4), and before Georgia Tech it had surrendered a dozen plays of 40 or more yards and six of 60 or more. The improvement since the shake-up is real but partial: the Cardinals sacked Syracuse five times and Florida State four, yet Syracuse still passed for 339 yards and Stanford for 270. Georgia Tech was held to 109 rushing yards and 17 points, but still completed 25 of 45 passes for 241 yards.</p>
+
+  <p>That sets up the central tension. Louisville's offense, the more explosive of the two, meets a UNC defense that is excellent at getting to the quarterback and poor at getting off the field on third down (121st nationally, allowing a 44.1 percent conversion rate). UNC's offense, more efficient than explosive and 121st in rushing, meets a secondary that gives up chunks. Then there are the subplots. Petrino returns for the first time since Louisville fired him in 2018. Jeff Brohm was his quarterbacks coach in Petrino's first Louisville stint, Brian Brohm was his starting quarterback, and Petrino's brother Paul is now the Cardinals' tight ends coach. Nobody on either sideline will be surprised by anything the other does schematically, which means this will be decided by execution, turnovers and who gets the ball in space.</p>
+
+  <p>The stakes are real for both. UNC needs one win in its last three to reach a bowl for the first time under Belichick. Louisville is within a game in the loss column of Wake Forest for the second ACC Championship Game spot behind undefeated-in-conference Miami, and a loss in Chapel Hill would put a third conference loss on the board and badly damage that case.</p>
+</section>
+
+<!-- LINEUPS -->
+<section id="lineups">
+  <div class="sec-head"><div><div class="sec-no">02</div><h2>Lineups &amp; Injuries</h2></div></div>
+  <p class="lede">The ACC's Friday availability update removes most of the uncertainty, and the one name that matters most, UNC tight end Jelani Thurman, is now probable. For this breakdown I am assuming every probable player on either side plays.</p>
+
+  <div class="grid2">
+    <div class="panel u">
+      <h3>UNC starters</h3>
+      <dl class="dc">
+        <div class="sub-h">Offense</div>
+        <dt>QB</dt><dd>Billy Edwards Jr.</dd>
+        <dt>RB</dt><dd>Jaylen McGill <span style="color:var(--muted)">(Benjamin Hall gets more snaps)</span></dd>
+        <dt>WR</dt><dd>Jordan Shipp, Boomer Helton, Trech Kekahuna</dd>
+        <dt>TE</dt><dd>Jelani Thurman <span class="st p">PROBABLE</span> <span style="color:var(--muted)">(Jordan Washington, Easter, Carson Sneed)</span></dd>
+        <dt>OL</dt><dd>LT Jordan Hall &middot; LG Andrew Threatt &middot; C Christo Kelly &middot; RG Cristian Alvarez &middot; RT Jacqawn &ldquo;Shaq&rdquo; McRoy</dd>
+        <div class="sub-h">Defense</div>
+        <dt>DE</dt><dd>Melkart Abou Jaoude, Jaylen Harvey</dd>
+        <dt>DT</dt><dd>Leroy Jackson, Isaiah Johnson <span style="color:var(--muted)">(Xavier Lewis rotates heavily)</span></dd>
+        <dt>LB</dt><dd>Peyton Seelmann, Derek McDonald</dd>
+        <dt>CB</dt><dd>Jaiden Patterson, Jalon Thompson</dd>
+        <dt>NB</dt><dd>Kaleb Cost</dd>
+        <dt>S</dt><dd>FS Javion Butts &middot; SS Greg Smith</dd>
+      </dl>
+    </div>
+    <div class="panel l">
+      <h3>Louisville projected starters</h3>
+      <dl class="dc">
+        <div class="sub-h">Offense</div>
+        <dt>QB</dt><dd>Lincoln Kienholz</dd>
+        <dt>RB</dt><dd>Isaac Brown <span class="st p">PROBABLE</span> <span style="color:var(--muted)">(Keyjuan Brown)</span></dd>
+        <dt>WR</dt><dd>Tre Richardson, Lawayne McCoy <span class="st p">PROBABLE</span>, TreyShun Hurry</dd>
+        <dt>TE</dt><dd>Jaleel Skinner <span style="color:var(--muted)">(Brody Foley or Justyn Reid)</span></dd>
+        <dt>OL</dt><dd>LT Lance Robinson &middot; LG Eryx Daugherty &middot; C Evan Wibberley &middot; RG Johnnie Brown III &middot; RT Cason Henry <span class="st p">PROBABLE</span></dd>
+        <div class="sub-h">Defense</div>
+        <dt>DE</dt><dd>Tyler Thompson, Clev Lubin</dd>
+        <dt>DT</dt><dd>Demeco Kennedy <span class="st p">PROBABLE</span>, Joshua Donald</dd>
+        <dt>LB</dt><dd>Stanquan Clark, T.J. Capers</dd>
+        <dt>BN</dt><dd>Ben Perry <span style="color:var(--muted)">(big nickel)</span></dd>
+        <dt>CB</dt><dd>Jabari Mack, Tayon Holloway</dd>
+        <dt>S</dt><dd>FS Koen Entringer &middot; SS Kaleb Beasley</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="panel u inj">
+      <h3>UNC availability <span class="tg" style="color:var(--muted)">ACC Friday update</span></h3>
+      <div><h4 class="out">Out</h4><ul><li>DB Tre Miller</li><li>LB Jonathan Agumadu <small>(season)</small></li><li>DL Joseph Mupoyi</li><li>DL Viliami Moala</li><li>WR Keeyun Chapman</li><li>DL Vodney Cleveland</li><li>WR Kymistrii Young</li><li class="key">P Jacob Horvath</li></ul></div>
+      <div><h4 class="q">Questionable</h4><ul><li>DL Emmanuel Nwaiwu</li></ul></div>
+      <div><h4 class="p">Probable</h4><ul><li class="key">TE Jelani Thurman</li><li>DB Peyton Waters</li><li>DL Jimmy-Phrisco Alo-Suliafu</li></ul></div>
+    </div>
+    <div class="panel l inj">
+      <h3>Louisville availability <span class="tg" style="color:var(--muted)">ACC Friday update</span></h3>
+      <div><h4 class="out">Out</h4><ul><li>DB Antonio Watts</li><li class="key">P Jacob Baker</li><li>OT Bryten Close</li><li>OL Anwar O'Neal</li><li>WR Payton Cook</li><li>TE Hamilton Atkins</li><li>DL Sam Dawson</li></ul></div>
+      <div><h4 class="p">Probable</h4><ul><li>RB Isaac Brown</li><li>WR Lawayne McCoy</li><li>DL Demeco Kennedy</li><li>DB Myles Norwood</li><li>OL Cason Henry</li></ul></div>
+    </div>
+  </div>
+  <div class="note">Changes in Friday's update (posted Nov. 13, 8 p.m. ET): UNC's Jelani Thurman and Peyton Waters move from questionable to probable, Ashton Blatt and Nicco Maggio come off the report, and Emmanuel Nwaiwu is the only Tar Heel still questionable. Louisville's list is unchanged. I am assuming every probable player plays. Cost, Jordan Hall and the rest of UNC's starting offensive line are not listed. The final report comes two hours before kickoff.</div>
+</section>
+
+<!-- QB -->
+<section id="qb">
+  <div class="sec-head"><div><div class="sec-no">03</div><h2>Quarterbacks</h2></div><span class="edge lou">Edge <b>Louisville (slight)</b></span></div>
+  <p class="lede">Louisville has a slight edge here, mostly on production and ball security, and North Carolina's path runs through making Lincoln Kienholz uncomfortable rather than out-throwing him.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Billy Edwards Jr.</div><div class="v">2,127 yds</div><div class="s">178/273 &middot; 18 TD &middot; 6 INT</div></div>
+    <div class="tile l"><div class="k">Lincoln Kienholz</div><div class="v">2,276 yds</div><div class="s">158/233 (67.8%) &middot; 14 TD &middot; 3 INT</div></div>
+    <div class="tile u"><div class="k">Edwards under pressure</div><div class="v">58.6</div><div class="s">PFF grade, vs 77.6 from a clean pocket</div></div>
+  </div>
+  <p>Billy Edwards Jr. is a sixth-year senior who arrived from Wisconsin after a knee injury limited him to two games in 2025. His last full season, at Maryland in 2024, produced a 65.0 completion percentage, 2,881 yards, 15 touchdowns and nine interceptions, and the 2026 version looks very similar in shape: 18 touchdown passes against six interceptions through nine games, averaging 236.3 passing yards. He is coming off the best stretch of his career: more than 600 yards, six touchdowns and no interceptions across the Syracuse and Miami games, including 341 yards and four touchdowns against No. 1 Miami (ACC Quarterback of the Week), then 29-of-38 for 255 yards and three touchdowns at UConn. The UConn game came with a first-drive interception that Hayden Pegg returned to the UNC 48, and the pattern in the tape is consistent: Edwards is excellent when the offense stays on schedule and noticeably worse when it does not.</p>
+  <p>The Pro Football Focus numbers from UConn are the best window into what he is. He averaged 2.46 seconds to throw, went 10 of 11 for 99 yards on throws behind the line of scrimmage and 16 of 19 for 115 yards and two touchdowns from zero to nine yards downfield. He was 21 of 27 for 199 yards and two touchdowns from a clean pocket, but his grade dropped to 58.6 on the 14 dropbacks where UConn got pressure. He hit just one of four attempts between 10 and 19 yards, and he went 10 of 14 for 69 yards, two touchdowns and an interception off play action, a 37.2 grade on those throws, compared with 19 of 24 for 186 yards and an 89.2 grade without it. Critics have long pointed to missed outlets, lost mechanics and trouble when pressure arrives. Those are real. They are also why Louisville's front, not its secondary, is the first thing UNC's protection has to solve.</p>
+  <p>Kienholz is a redshirt junior who spent three years at Ohio State, completed 11 of 14 passes for 139 yards in 2025 and transferred in as the first full-time starter of his career. His development has been fast. He threw for 307 yards in the opener against Ole Miss, the first 300-yard opener by a Louisville quarterback, and had 275 passing yards with two passing and two rushing touchdowns in a single half against Villanova, a combination no Cardinal had produced since Lamar Jackson in 2016. He has 2,276 passing yards and 14 touchdowns against three interceptions on 158-of-233 passing (67.8 percent), plus about 390 rushing yards and at least 11 rushing touchdowns. He has scored on the ground in nearly every game.</p>
+  <p>The weaknesses are narrower than Edwards's. He threw two interceptions in the Syracuse game and threw another against Wake Forest. His 3.5 yards per carry means he is a red-zone and third-down runner, not a home-run threat, and UNC held UConn's running quarterback Kalieb Osborne to 28 yards on 11 carries by keeping him in the pocket and trusting the rush. That is the template. Xavier Lewis and Melkart Abou Jaoude have to flush Kienholz upfield rather than let him escape, and the Tar Heels cannot afford the kind of busted contain that turns a sack into a 15-yard scramble. Kienholz's 17-of-25, 182-yard line at Georgia Tech, padded by 81 rushing yards, shows how he operates when the passing game is not needed: efficient, patient, and happy to let the run game decide the evening.</p>
+</section>
+
+<!-- RB -->
+<section id="rb">
+  <div class="sec-head"><div><div class="sec-no">04</div><h2>Running Backs</h2></div><span class="edge lou">Edge <b>Louisville</b></span></div>
+  <p class="lede">This is the widest talent gap on the field, and it favors Louisville, though the Cardinals' ground game has had two genuinely quiet nights this season.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Benjamin Hall</div><div class="v">377 yds</div><div class="s">69 carries &middot; 5.5 per carry &middot; 1 TD</div></div>
+    <div class="tile l"><div class="k">Isaac Brown</div><div class="v">745 yds</div><div class="s">99 carries &middot; 8 rushing TD (10 total)</div></div>
+    <div class="tile l"><div class="k">Louisville vs Wake / Syracuse</div><div class="v">75 &amp; 115</div><div class="s">the two quiet rushing nights</div></div>
+  </div>
+  <p>UNC's backfield is a rotation, not a showcase. Benjamin Hall, a 5-foot-11, 230-pound captain who transferred from Michigan, led the team with 296 yards on 60 carries through eight games, a healthy 4.9 per carry but without a touchdown. He broke that at UConn with a 39-yard score, the longest run of UNC's season, and finished with nine carries for 81 yards, which puts him at 377 yards on 69 carries (5.5 per attempt). Jaylen McGill has been the starter, but Hall plays more snaps, and Demon June (15 carries for 60 yards at UConn) is part of a three-man rotation; at UConn June played 29 snaps, Hall 25 and McGill 22. It is the three-deep, three-down depth Petrino wants. The problem is the line in front of them: UNC ranks 121st nationally in rushing at 114.2 yards per game, and the Miami game (a 13-carry, 44-yard day for June against the nation's top run defense) showed how quickly the offense becomes one-dimensional. The UConn game was the best version of the plan, 36 carries for 164 yards (4.6 per carry) and a 36:23 to 23:37 time-of-possession edge, helped by a second half played in a downpour. Hall had a hamstring injury against Duke and has been back since. Hall's best day of the season remains the 18-carry, 130-yard game at Clemson.</p>
+  <p>Louisville's room is the reason the Cardinals are eighth nationally in rushing (228.0 yards per game) and, as of last week, second in yards per carry. Isaac Brown, the 5-foot-9 junior who spent the offseason adding weight (182 to 195 pounds) and was a preseason All-ACC pick and Walter Camp watch-list name, has 745 rushing yards on 99 carries, eight rushing touchdowns (10 in all) and two huge games in the last five weeks: 17 carries for 235 yards and two touchdowns against Florida State, and a career-high four touchdowns and 172 total yards against Stanford. He was a game-time decision at Georgia Tech with a lower-body issue, warmed up with his leg wrapped, played, and finished with seven carries for 38 yards and a touchdown. He is probable on the Friday update and I am assuming he plays, which matters because he missed the end of last season with a hamstring injury.</p>
+  <p>The depth is the real strength. Keyjuan Brown, a 5-foot-10, 215-pound senior, ran for 162 yards and two touchdowns on 10 carries against SMU and 54 yards at Georgia Tech. Marquise Davis, the Missouri transfer, had 86 yards and two scores against Villanova, and Braxton Jennings added a late touchdown against Tech. Wide receiver Tre Richardson is effectively a fourth back: he has 11 carries for 169 yards and two touchdowns, including a 52-yard end-around score against Georgia Tech, the longest touchdown run by a Louisville wideout since 2004. Brohm admitted in the preseason that he leaned too hard on Isaac Brown last season, and the staff now spreads the carries out, so UNC does not get to key on one player.</p>
+  <p>The silver lining for the Tar Heels is that Louisville's run game has been beatable. It managed 75 yards on 38 carries (2.0 per carry) against Wake Forest and 115 on 35 at Syracuse. Those two games are the template, and the way UNC held UConn, then 28th nationally in rushing, to 123 yards suggests Leroy Jackson (83.5 PFF grade against the Huskies) and the interior can at least make Louisville earn it.</p>
+</section>
+
+<!-- REC -->
+<section id="rec">
+  <div class="sec-head"><div><div class="sec-no">05</div><h2>Receivers &amp; Tight Ends</h2></div><span class="edge even">Edge <b>Close</b></span></div>
+  <p class="lede">Louisville has more speed on the outside; UNC has the best single matchup piece in the game at tight end, and it is closer here than the quarterback and running back rooms suggest.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Jordan Shipp</div><div class="v">642 yds</div><div class="s">50 catches &middot; 4 TD &middot; TD in 4 straight</div></div>
+    <div class="tile u"><div class="k">Jelani Thurman <span class="st q">Q</span></div><div class="v">8 TD</div><div class="s">45 catches &middot; 525 yds &middot; ties UNC TE record</div></div>
+    <div class="tile l"><div class="k">Tre Richardson</div><div class="v">685 yds</div><div class="s">44 catches &middot; 3 TD &middot; plus 169 rushing</div></div>
+  </div>
+  <p>Jordan Shipp is the Tar Heels' receiver and the one constant from last year's offense, when he caught 60 passes for 671 yards and six touchdowns. This season he had 587 yards on 45 catches and three scores through eight games, then added five catches for 55 yards and a touchdown at UConn, his fourth straight game with a score. He is more of a reliable chain-mover than a burner. Behind him the group is thin and inconsistent. Trech Kekahuna, who followed Edwards from Wisconsin, graded 53.3 at UConn after a 71.4 the week before, and Mason Humphrey, the Lehigh transfer, has produced little, though he did play 23 snaps at UConn after missing time with an injury. Shipp, Boomer Helton and Kekahuna are the starting three, with Humphrey and true freshman CJ Sadler in the rotation, and Jaden Jefferson handles kick returns. Ten different Tar Heels caught a pass at UConn, which is the offense's way of saying nobody besides Shipp and the tight ends is a reliable first read.</p>
+  <p>That is where Jelani Thurman comes in. The 6-foot-6, 233-pound Ohio State transfer has 45 catches for 525 yards and eight touchdowns, tied for the single-season UNC record for tight ends set in 1979 and second nationally among tight ends in receiving touchdowns before the UConn game. He caught seven passes for 64 yards and two touchdowns at UConn, five for 70 and two scores against Miami, four for 71 and a touchdown against ETSU, and four for 94 against TCU. The refrain around the program has been &ldquo;when in doubt, find 45,&rdquo; and it works because Thurman is simply bigger than the linebackers and safeties who cover him. PFF graded him 72.2 over 65 snaps at UConn, with a 79.7 receiving mark. The tight end depth chart behind him is Jordan Washington (12 snaps at UConn), Easter, who is more of a big receiver and pass-catching tight end, and Carson Sneed (20 snaps, 69.3 grade), and that group gives Petrino his 12 and 13 personnel looks.</p>
+  <div class="callout"><p><b>Injury note:</b> Thurman is listed as probable on the Friday update and I am assuming he plays. If he does not, Washington, Easter and Sneed would have to absorb his 65 snaps and his red-zone role, and none of them has his production.</p></div>
+  <p>Louisville's group has a clear No. 1 and a lot of burners, but less proven depth. Tre Richardson, the Vanderbilt transfer, leads the team with 44 catches, 685 yards and three touchdowns, and is a Biletnikoff and Paul Hornung watch-list name who also lines up in the backfield. He had four catches for 83 and a touchdown in the Ole Miss opener and 10 for 140 against Stanford. TreyShun Hurry caught eight passes for 104 yards and a touchdown at Georgia Tech. The key question mark was Lawayne McCoy, the Florida State transfer who had 102 yards and a score against Villanova and 93 yards at Syracuse and was expected to miss several weeks but is probable on the Friday update and I am assuming he plays, which gives Louisville Richardson, Hurry and McCoy together. Jackson Voth (the Drake transfer, also the punt returner), TJ McWilliams and Elizjah Lewis are the second team on the projected depth chart, which lists McCoy as a starter. Receiver Payton Cook and tight end Hamilton Atkins are listed out. Pass-catcher depth and the offensive line are the two weak points on this offense. The projected depth chart lists Jaleel Skinner as the starting tight end, with Brody Foley (Tulsa, on the Mackey Award watch list) or Justyn Reid behind him. Tight ends have not shown up among Louisville's leading receivers, and Paul Petrino coaches the position.</p>
+  <p>The practical matchup is that UNC's defensive backs will have to handle speed in space, which the secondaries section below shows is a legitimate concern, while Louisville's linebackers and safeties have to decide who takes a 6-foot-6 tight end who already has eight touchdowns.</p>
+</section>
+
+<!-- OL -->
+<section id="ol">
+  <div class="sec-head"><div><div class="sec-no">06</div><h2>Offensive Lines</h2></div><span class="edge lou">Edge <b>Louisville (run game)</b></span></div>
+  <p class="lede">Neither line is a strength, but Louisville's has been productive enough in the run game to mask its issues, while UNC's has been merely competent and has to hold up against the better pass rush.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">UNC sacks allowed</div><div class="v">13</div><div class="s">through six games</div></div>
+    <div class="tile u"><div class="k">Hall &middot; McRoy grades at UConn</div><div class="v">59.3 &middot; 46.6</div><div class="s">PFF offensive grades</div></div>
+    <div class="tile l"><div class="k">Louisville rush yards</div><div class="v">397 / 296 / 251</div><div class="s">FSU / Stanford / Georgia Tech</div></div>
+  </div>
+  <p>North Carolina's group is a marked improvement on a very poor 2025 and is probably still average to below average. Five starters played all 57 snaps in the opener against TCU, something the line managed in only two games all of last season, and the line has stayed healthier than last year's, with left tackle Jordan Hall the only starter to miss meaningful time. Hall, a 6-foot-8, 310-pound redshirt junior from UAB, missed three games before returning against Syracuse. He struggled badly at Clemson, where he allowed seven pressures, five hurries and a sack, and his PFF grades of 54.8 against Miami and 59.3 at UConn show he is still working back. Right tackle Jacqawn &ldquo;Shaq&rdquo; McRoy, a 6-foot-8 transfer who played for Petrino at Arkansas, has been steadier in pass protection than in the run game, but graded just 46.6 at UConn. Christo Kelly anchors at center. At guard, Andrew Threatt, the Charleston Southern transfer, starts at left guard and had the best pass-blocking grade among the starters at UConn (81.3), and Cristian Alvarez starts at right guard, playing 69 snaps with a 73.2 pass-blocking mark. Aidan Banfield, a starter earlier in the season, has been benched and played only seven snaps at UConn. No Tar Heel offensive lineman appears on any availability report.</p>
+  <p>The cumulative numbers match the eye test. UNC had allowed 13 sacks through six games, and Edwards's PFF grade falls from 77.6 in a clean pocket to 58.6 when pressured. UConn got to him on 14 dropbacks, and Louisville has piled up five sacks against Syracuse and four against Florida State. The run game, which ranks 121st nationally, managed 4.6 per carry at UConn, but that was against a defense allowing nearly 140 rushing yards a game, and Petrino's power and wide-zone concepts depend on McRoy and Hall winning at the point of attack.</p>
+  <p>Louisville's line has been a revolving door. The Cardinals added Anwar O'Neal (Delaware), Eryx Daugherty (Boston College), Johnnie Brown III (Georgia Southern), Cason Henry (South Carolina) and Evan Wibberley (Kentucky) through the portal and returned Lance Robinson and Naeer Jackson. Robinson, who spent time at Middle Tennessee and Houston and is on the Outland Trophy watch list, is the most proven pass protector, having allowed four sacks and one quarterback hit across 483 pass-blocking snaps at Houston. The projected depth chart has him at left tackle, with Eryx Daugherty at left guard, Evan Wibberley at center, Johnnie Brown III at right guard and Cason Henry at right tackle, and Cameron Gorin, Jimmy Williams, Naeer Jackson and Jarvis Strickland on the second team. But injuries have forced repeated lineup changes, and the Friday update lists O'Neal and Bryten Close as out and Cason Henry as probable, and I am assuming Henry plays. The group has been average at best.</p>
+  <p>The production tells a different story. Louisville ran for 251 yards at Georgia Tech, 296 against Stanford and 397 against Florida State, and the line has been the beneficiary of a scheme that uses option looks, end-arounds and speed in space to reduce the burden on pure blocking. The Wake Forest (75 yards) and Syracuse (115) games are where the line was exposed. I could not find a reliable sacks-allowed figure for Louisville, which is itself a caution against reading too much into either side's pass protection. The honest read: Louisville has the edge in run blocking and UNC's tackles are the most worrying pass-protection pairing on the field.</p>
+</section>
+
+<!-- DL -->
+<section id="dl">
+  <div class="sec-head"><div><div class="sec-no">07</div><h2>Defensive Lines</h2></div><span class="edge lou">Edge <b>Louisville</b></span></div>
+  <p class="lede">Louisville has the better line here: deeper, more balanced and better against the run, even though UNC's Xavier Lewis is the most productive individual disruptor in this game.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Xavier Lewis</div><div class="v">7 sacks</div><div class="s">10 TFL &middot; ninth nationally in sacks per game</div></div>
+    <div class="tile l"><div class="k">Clev Lubin</div><div class="v">7 sacks</div><div class="s">2 at Georgia Tech &middot; 8.5 last year</div></div>
+    <div class="tile l"><div class="k">Tyler Thompson (ex-UNC)</div><div class="v">5.5 sacks</div><div class="s">6.5 TFL &middot; second on the team</div></div>
+  </div>
+  <p>The headliner is Xavier Lewis, a 6-foot, 260-pound sophomore from Raleigh who lines up at tackle, end and everywhere in between. He is not one of the four listed starters (Abou Jaoude and Harvey on the edge, Leroy Jackson and Isaiah Johnson at tackle), but he plays a large share of snaps. He was named a first-team midseason All-American, and the production backs it: seven sacks (0.88 per game, ninth nationally) and 10 tackles for loss (1.25 per game, 21st nationally), after leading the country in sacks per game through the first three weeks. He was the Aer Lingus Classic MVP, has won ACC Defensive Lineman of the Week more than once, and had a career-high 12 tackles with a sack at Pitt. The caution is that he is not an every-week force: he graded 55.0 against Miami before rebounding to 71.7 with four pressures at UConn, and he has been used in a rotation (36 snaps at UConn, 73 at Pitt).</p>
+  <p>The supporting cast has quietly become a real asset. Melkart Abou Jaoude, the right end, posted an 87.6 pass-rush grade against TCU and led the team with five pressures, including a sack, at UConn. Leroy Jackson, a starting tackle, graded 83.5 over 38 snaps at UConn with an 84.6 run-defense mark, Isaiah Johnson starts next to him at nose tackle, Jaylen Harvey (a Penn State transfer who had two sacks against ETSU) starts at the other end spot, and Donovan Hoilette Jr., from Richmond, had a sack at Pitt. Reserves Joseph Mupoyi, Viliami Moala and Vodney Cleveland are out, Jimmy-Phrisco Alo-Suliafu is probable, and Emmanuel Nwaiwu is questionable, but none of them is a regular (Nwaiwu played seven snaps at UConn and the others did not appear), so the rotation that matters looks intact. Bob Diaco's unit pressured UConn 22 times for three sacks and, as a team, was tied for ninth nationally in sacks early in the year. The question is the run: after allowing just 1.7 yards per carry through the first three games, the Tar Heels are now allowing 149.8 rushing yards per game (78th nationally), and eight of their nine opponents have run for at least 100.</p>
+  <p>Louisville's front is deeper and more balanced. Clev Lubin, a senior who had 8.5 sacks last year and has seven this season, including two at Georgia Tech, was a preseason All-ACC selection and sits on the Nagurski, Bednarik, Lombardi and Lott watch lists. Tyler Thompson is the story within the story: a Cary native who started his career at UNC and transferred to Louisville this offseason, he is second on the Cardinals with 5.5 sacks and 6.5 tackles for loss, and he had five tackles and a pass breakup at Georgia Tech. On the projected depth chart Thompson and Lubin start at end, with Jerod Smith and AJ Green behind them, and Demeco Kennedy (Purdue) and Joshua Donald (Houston) start at tackle, with Tommy Zeismer and Daylen Russell (Miami) as the second team, a transfer-heavy rotation whose depth is the lone question on the defense. Kennedy is probable, and I am assuming he plays, while Sam Dawson is out.</p>
+  <p>The production has been uneven but trending up. The Cardinals were at 1.5 sacks per game (95th) and allowing 165.3 rushing yards per game (103rd) after four games, then sacked Florida State four times and Syracuse five, and held Georgia Tech to 109 rushing yards and Stanford to 81. Mark Ivey, a co-defensive coordinator who also coaches the line, has turned it from a soft spot into a competent one, and Louisville's rush defense now ranks 66th at 138.6 yards per game. I give Louisville the nod on the line: Lubin and Thompson have 12.5 sacks between them, the Cardinals' tackle rotation is deeper, and their run defense ranks 66th to UNC's 78th, while the Tar Heels lean heavily on Lewis, who graded 55.0 against Miami. UNC's tackles are the weak link in a matchup against Lubin and Thompson, and the rest of this report treats that as a top concern.</p>
+</section>
+
+<!-- LB -->
+<section id="lb">
+  <div class="sec-head"><div><div class="sec-no">08</div><h2>Linebackers</h2></div><span class="edge unc">Edge <b>UNC</b></span></div>
+  <p class="lede">Both teams play a multiple 4-2-5 with two true linebackers, which makes this a matchup about space and discipline more than size, and the edge goes to North Carolina, whose two starters have 171 tackles between them and whose rotation has produced the bigger plays lately.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Derek McDonald</div><div class="v">89 tkl</div><div class="s">team leader &middot; captain</div></div>
+    <div class="tile u"><div class="k">Timir Hickman-Collins</div><div class="v">93.7</div><div class="s">PFF grade at UConn &middot; 62-yd pick-six</div></div>
+    <div class="tile l"><div class="k">Stanquan Clark</div><div class="v">64 tkl</div><div class="s">team leader &middot; Butkus watch list</div></div>
+  </div>
+  <p>UNC replaced both starters from last year's group through the portal, and the new pair has been steady rather than spectacular. Peyton Seelmann, the Richmond transfer who plays the weak side, has 82 tackles (second on the team), 4.5 sacks and five tackles for loss, including two sacks at UConn, and graded 72.1 in that game. The one thing to watch is his tackling. Derek McDonald, the Syracuse transfer, a team captain and the team's leading tackler with 89, is the middle linebacker. He earned a season-low 50.1 grade against Miami, then bounced back to 63.8 at UConn with an 81.5 tackling grade, five tackles and three hurries. The most interesting piece is the rotation. Jonathan Agumadu's injury, which will keep him out for the rest of the season, opened snaps for redshirt sophomore Timir Hickman-Collins, who played only 15 defensive snaps at UConn but returned an interception 62 yards for a touchdown, recovered a fumble at the UConn 22 and graded 93.7 with no catches allowed on two targets. He is the first Tar Heel to intercept a pass and recover a fumble in the same game since Cedric Gray against Miami in 2023, and he also had a sack in just 13 snaps at Pitt. Calvin Thomas and David Jackson III round out the depth.</p>
+  <p>Louisville's pair is the more highly regarded, but the production has been lighter. Stanquan Clark leads the team with 64 tackles and a share of the team high in pass breakups, is on the Butkus Award watch list and is a downhill, gap-shooting run defender, though injury limited him to five games last season. T.J. Capers, a former five-star recruit who had a key interception against Miami last year, had 45 tackles through seven games. Cameron White and Kalib Perry are the second team behind them. Ben Perry, the UCLA transfer, starts at the big nickel spot, the hybrid fifth defensive back, and was listed as probable on Wednesday's report but is no longer on it.</p>
+  <p>The weakness is coverage in space. The Louisville linebackers were not asked to get downhill against the run in the Stanford game, and they bit hard on basic play-action, which is a defensible scheme choice but a vulnerability. That is where UNC's offense can find a path. Thurman and Easter will run seams and shallow crosses against zone looks, and a quarterback who throws 10 of 11 for 99 yards behind the line of scrimmage will find work against linebackers whose job is not to attack the run.</p>
+</section>
+
+<!-- DB -->
+<section id="db">
+  <div class="sec-head"><div><div class="sec-no">09</div><h2>Secondaries</h2></div><span class="edge unc">Edge <b>UNC (very slight)</b></span></div>
+  <p class="lede">Both secondaries are the weakest link of their defenses, which is why the over/under sits at 60.5 and why this matchup probably decides the game. I give UNC a very slight edge.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">UNC pass defense</div><div class="v">227.2</div><div class="s">yards per game &middot; 91st</div></div>
+    <div class="tile l"><div class="k">Louisville pass defense</div><div class="v">265.9</div><div class="s">yards per game &middot; 130th, last in ACC</div></div>
+    <div class="tile l"><div class="k">Kaleb Beasley</div><div class="v">5 INT</div><div class="s">through seven games &middot; tied national lead</div></div>
+  </div>
+  <p>UNC's defensive backs began the year as a strength, allowing 145.5 passing yards per game and ranking ninth nationally through three games, and have deteriorated with injuries and attrition: 227.2 yards per game (91st) through nine games and a 65 percent completion rate through eight. Brian Belichick, now the interim defensive coordinator and the secondary coach, has been shuffling. Peyton Waters, a safety, left the Duke game with a shoulder injury and did not play at UConn, so Javion Butts (82.7 overall and an 84.1 coverage grade in 44 snaps) starts at free safety and Greg Smith (72.1 at UConn) at strong safety, with Coleman Bryson (68.4 in 41 snaps) as the next man up. At corner, Jaiden Patterson (51.9) has played the right side and Jalon Thompson, who has logged more outside snaps than Kenton Dopson III, is the other outside corner. Thompson was the best of the group at UConn (80.4, first career interception), while Dopson's 39.8 was the lowest grade on the defense. Kaleb Cost (55.9), the nickel, spent time injured in October, and he and Patterson were each targeted seven times against UConn. Ade Willie, a Michigan State transfer, gets spot snaps. Tre Miller is out again, and Waters is probable and I am assuming he plays, which gives Belichick another safety to rotate. UConn completed 17 of 34 targets for 245 yards and two touchdowns even in a game where UNC won the turnover battle 3-1.</p>
+  <p>Louisville's secondary has been worse by the numbers and better by the ball skills. Kaleb Beasley, the strong safety, a Tennessee transfer at 6-foot-1 and 200 pounds, had five interceptions through seven games, tied for the national lead, along with 37 tackles and six pass breakups. Koen Entringer, a fifth-year Iowa transfer who had 73 tackles and was an All-Big Ten honorable mention last year, is the free safety and the physical presence of the group. The projected depth chart has Jabari Mack and Tayon Holloway at cornerback, with Bryce Scott and Antonio Harris behind them, Ben Perry at big nickel with Blake Ruffin behind him, and TJ Banks (Ole Miss) as the backup at both safety spots. I could not find reliable season numbers for either starting corner. Antonio Watts is out and Myles Norwood is probable, and neither is on the projected chart. Steve Ellis, the co-defensive coordinator, runs the group.</p>
+  <p>But the chunk-play problem is documented. Through five games the Cardinals gave up a program-worst 266.8 passing yards per game, with 13 completions of 30 or more yards, six of 40 or more and four of 50 or more. They rank 130th nationally in passing yards allowed and last in the ACC, and three plays accounted for 145 yards at Syracuse, where Umari Hatcher caught 13 passes for 224 yards. Wake Forest's Carlos Hernandez had nine catches for 194, Ole Miss's Deuce Alexander had five for 159 and two touchdowns, and NC State's quarterback threw for 373. Brohm called out two deep passes surrendered in man coverage and another on third-and-17 in Cover 2 at Syracuse, and the unit has also been burned by a busted Beasley blitz and by biting on basic play action. The staff has since adopted wristbands for communication, and Georgia Tech completed 25 of 45 for 241 yards with an interception.</p>
+  <p>The edge is very slight, and I give it to UNC: the Tar Heels allow 227.2 passing yards per game (91st) to Louisville's 265.9 (130th), and Butts and Thompson both graded above 80 at UConn. Louisville's defensive backs take the ball away (Beasley has done it five times), which keeps it close, and UNC has not been able to cover big plays. Edwards does not throw many deep balls, with only four attempts between 10 and 19 yards at UConn, so the question is whether Petrino's play-action shots find Shipp and Thurman in the soft spots.</p>
+</section>
+
+<!-- ST -->
+<section id="st">
+  <div class="sec-head"><div><div class="sec-no">10</div><h2>Special Teams, Coaching &amp; Intangibles</h2></div><span class="edge unc">Edge <b>UNC (slight)</b></span></div>
+  <p class="lede">In a game likely to be decided by a possession, discipline and the kicking game matter more than usual, and UNC has the cleaner profile in both areas, while the coaching comparison is more complicated than the record suggests.</p>
+  <div class="tiles">
+    <div class="tile u"><div class="k">Rece Verhoff (2025)</div><div class="v">19 of 23</div><div class="s">field goals &middot; 57-yard program record</div></div>
+    <div class="tile l"><div class="k">Jackson Voth</div><div class="v">167 yds</div><div class="s">on 10 punt returns &middot; 68-yarder at GT</div></div>
+    <div class="tile u"><div class="k">Penalty yards per game</div><div class="v">34.3 vs 72.1</div><div class="s">UNC 6th fewest &middot; Louisville 124th</div></div>
+  </div>
+  <p>Rece Verhoff, a fifth-year senior who got a court ruling for an extra year of eligibility, is the Tar Heels' kicker and a trusted one: he made 19 of 23 field goals last year, including a program-record 57-yarder at Wake Forest. He made a 27-yarder and missed a 49-yarder at UConn. The early-season kicking problems (Aeron Burrell was 4 of 7, with every miss from 40 yards or longer) went away once Verhoff became eligible, and Burrell has settled into punting and kickoffs, averaging 42 yards on three punts at UConn with a long of 47. Jaden Jefferson returns kicks and Trech Kekahuna catches punts. Special teams coordinator Billy Miller inherited a unit that needed rebuilding, and it has stabilized. The Friday update lists Jacob Horvath, who held for Verhoff's kicks at UConn, as out, so someone new will be holding for him. Louisville's special teams are built around Jackson Voth, who has 167 yards on 10 punt returns, including a 68-yarder at Georgia Tech that set up a touchdown, and who also muffed a punt in that game. Garth White (Rhode Island) kicks. Jacob Baker (Eastern Kentucky), the punter, is listed out on each availability report, so Louisville will be using someone else, and I could not find reliable season numbers for either specialist. Karl Maslowski coordinates the unit.</p>
+  <p>On penalties, UNC ranks sixth nationally in fewest penalty yards per game (34.3), while Louisville ranks 124th at 72.1, consistent with the discipline Belichick has pointed to all year. Louisville has had to clean up its own penalty issues, and Brohm has cited it as a focus. The Cardinals were flagged four times for 35 yards against Florida State.</p>
+  <p>The coaching comparison is the interesting one. Bill Belichick's team is better prepared and more disciplined than last year's, and he has said the defense is playing fewer calls with better continuity, but the staff has been unsettled by his son Steve's medical leave from August and resignation as defensive coordinator, with Brian Belichick taking over as the primary play-caller. Petrino, who had Jeff Brohm on his staff at Western Kentucky in 2013, has built a veer-and-shoot offense that has scored 30 or more in three of its last four games.</p>
+  <p>Jeff Brohm earned his 100th career win last week (34 of them at Louisville) and is known as a giant slayer with five top-10 wins, but this team has lost to Wake Forest and NC State this year, and the Cardinals have occasionally played down to opponents under Brohm. Handing play-calling to Brian Brohm on Oct. 9 and shifting his own focus to the defense has coincided with the winning streak. The open question is whether that setup travels: Louisville is 2-1 in true road games this year, and its only road loss was at NC State, where it allowed a career-high 373 passing yards to the opposing quarterback.</p>
+  <p>There is also the matter of the setting. UNC is 1-3 at Kenan this season and the building has not been an advantage: one of the three losses came by a point in overtime and another by three to the top-ranked team in the country. Both teams played Nov. 7, so rest is equal. Kickoff temperature is expected to be 42 degrees.</p>
+</section>
+
+<!-- TARGET -->
+<section id="target">
+  <div class="sec-head"><div><div class="sec-no">11</div><h2>Where UNC Should Target</h2></div></div>
+  <p class="lede">The cleanest opportunity is the Louisville back seven in coverage, and the best way to exploit it is to be patient with the underneath game and selective with the shots.</p>
+  <ol class="num">
+    <li><span class="h">Play-action and the middle of the field</span>
+      <p>Louisville ranks 130th in passing yards allowed and last in the ACC in pass defense, gave up 13 completions of 30-plus yards in the first five games and has repeatedly had breakdowns in both man and zone. The linebackers are not asked to attack the run and have bitten on basic play action. UNC's problem is that Edwards graded 37.2 on play-action throws at UConn despite going 10 of 14 with two touchdowns, in part because the throws were short and one was intercepted. The offense has to trust Petrino's shot calls. Edwards completed only one of four throws between 10 and 19 yards, and that is the range where Shipp and Thurman can win against soft zone landmarks. If the Tar Heels get four or five of those completions rather than one, the explosive-play deficit closes.</p></li>
+    <li><span class="h">Keep the red-zone edge, with Thurman as the finisher</span>
+      <p>UNC ranks 14th nationally in red-zone scoring at 93.1 percent, but Louisville has been much better near the goal line than its yardage suggests: it ranks 17th nationally, allowing scores on 75.0 percent of trips, so touchdowns will not come easily. Thurman, who is probable and whom I am assuming plays, has eight touchdowns and is tied for the school record, and a 6-foot-6 tight end against a defense built around five defensive backs and two linebackers is the type of mismatch Petrino has built around. In a game with a 60.5 total, trading field goals for touchdowns is worth roughly four points a possession.</p></li>
+    <li><span class="h">Use the run to control the clock rather than to dominate</span>
+      <p>UNC will not win a physical battle for 200 rushing yards; its rank of 121st says as much. But against UConn the Tar Heels ran 36 times for 164 yards, held the ball for 36:23 and ran a 16-play, 75-yard touchdown drive that took 6:09. Louisville scores quickly and takes the ball back quickly, so every long drive that ends in points reduces the number of possessions the Cardinals' offense gets. That also protects UNC's defense, which has the nation's 121st-ranked third-down defense and needs rest.</p></li>
+    <li><span class="h">Pressure Kienholz and force turnovers</span>
+      <p>The season-long margin favors Louisville: the Cardinals are +7 (14th nationally) and UNC is -1 (74th). The Tar Heels' defense has produced takeaways in bursts, though. It had forced nine turnovers and recovered six fumbles (tied for first) early in the season, produced three at UConn that turned into 21 points, and has a defensive tackle who ranks ninth nationally in sacks per game. Kienholz threw two interceptions at Syracuse and one against Wake Forest, so he has shown that he can be rattled, and Seelmann's blitz timing (two sacks at UConn) adds to a front that already includes Lewis and Abou Jaoude. The way to make this work is to keep Kienholz in the pocket, the same approach used on UConn's running quarterback.</p></li>
+    <li><span class="h">Take advantage of the penalty and special-teams edges</span>
+      <p>UNC ranks sixth nationally in fewest penalty yards per game (34.3), while Louisville is 124th (72.1), and Brohm has called the flags a focus. Verhoff is a reliable kicker, so a drive that stalls inside the Louisville 30 still produces points. Contain Voth on punt returns and make Louisville earn every yard; with its punter listed out, field position could swing a few points either way.</p></li>
+  </ol>
+</section>
+
+<!-- CONCERN -->
+<section id="concern">
+  <div class="sec-head"><div><div class="sec-no">12</div><h2>Where UNC Should Be Concerned</h2></div></div>
+  <p class="lede">The biggest worry is simple: Louisville has scored at least 27 in all nine games, and North Carolina has never won a game this season in which the opponent scored more than 21.</p>
+  <ol class="num red">
+    <li><span class="h">The run defense</span>
+      <p>Louisville is eighth nationally in rushing, second in yards per carry as of last week, and has run for 397 yards against Florida State, 296 against Stanford and 251 at Georgia Tech. UNC ranks 78th in rushing defense at 149.8 yards per game, has allowed eight of nine opponents at least 100 rushing yards, and ranks 121st in third-down defense, allowing conversions 44.1 percent of the time. The Cardinals do not just run between the tackles. Isaac Brown, Keyjuan Brown, Marquise Davis, Tre Richardson on end-arounds and Kienholz on keepers and options give them five different rushing threats, and the offense uses motion and edge attacks that stress the edges of a defense. A long Louisville drive that ends in a Kienholz touchdown run is the most likely way this game gets away from UNC.</p></li>
+    <li><span class="h">The explosive pass play</span>
+      <p>Six different Louisville players have scored touchdowns of 50 yards or longer this season, and the Cardinals rank among the nation's best at big plays. UNC's secondary has allowed 227 yards per game, and the UConn game showed the cracks: Patterson and Cost were each targeted seven times with sub-56 grades, Dopson's 39.8 was the lowest on the defense, and Waters, probable after a shoulder injury, may not be at full speed. Richardson (685 yards, a Biletnikoff watch-list name), Hurry, Voth and a probable McCoy can punish a missed assignment, and Kienholz is completing about two-thirds of his passes with a 14-to-3 touchdown-to-interception ratio.</p></li>
+    <li><span class="h">The Tar Heel tackles against Louisville's edge rushers</span>
+      <p>Lubin is a preseason All-ACC pick, and Thompson, a Cary native who started at UNC, has 5.5 sacks and will be motivated against his former team. Jordan Hall's 59.3 and Shaq McRoy's 46.6 against UConn are among the lowest grades on UNC's offensive line, Hall allowed seven pressures at Clemson, and Edwards's PFF grade drops from 77.6 in a clean pocket to 58.6 under pressure. Louisville sacked Syracuse five times and Florida State four. If Louisville gets home with four rushers, Petrino's options shrink to the short game he has already been using.</p></li>
+    <li><span class="h">Louisville knows this offense</span>
+      <p>Jeff Brohm was on Petrino's staff at Western Kentucky and was his quarterbacks coach at Louisville, Brian Brohm played quarterback for him, and Paul Petrino coaches the Cardinals' tight ends. That does not make Petrino predictable by definition, but it makes it less likely that the Louisville staff will be surprised by formations, tendencies or his sequencing on third down, and Jeff Brohm has spent the last month working directly with the defense.</p></li>
+    <li><span class="h">Turnovers and the scoreboard math</span>
+      <p>Beasley has five interceptions, Louisville is +7 in turnover margin to UNC's -1, and Edwards has thrown six, including one on the opening drive at UConn and one at Clemson. More importantly, UNC's offense has scored 30 or more in each of its last three games and lost two of them, 31-30 in overtime to Syracuse and 38-35 to Miami. Matching 34 points is not a given against a Louisville offense that has averaged 40.8, and the Tar Heels have little margin for a second half like the one at Clemson, where they led 17-6 at the break and were outscored 22-3 after it.</p></li>
+    <li><span class="h">The injury picture</span>
+      <p>The ACC's Friday update is the cleanest picture yet, and it is better news for UNC than Thursday's. Tight end Jelani Thurman and safety Peyton Waters have both moved from questionable to probable, as has defensive lineman Jimmy-Phrisco Alo-Suliafu, and I am assuming all three play, along with every other probable player on either side. Only defensive lineman Emmanuel Nwaiwu remains questionable, and linebacker Ashton Blatt and lineman Nicco Maggio are off the report. UNC is without linebacker Jonathan Agumadu (out for the season), defensive back Tre Miller, receivers Keeyun Chapman and Kymistrii Young, punter Jacob Horvath (Verhoff's holder at UConn) and defensive linemen Joseph Mupoyi, Viliami Moala and Vodney Cleveland. Cost, Hall and the rest of the starting offensive line are not listed. Louisville lists running back Isaac Brown, receiver Lawayne McCoy, defensive lineman Demeco Kennedy, defensive back Myles Norwood and tackle Cason Henry as probable, and is without offensive linemen Anwar O'Neal and Bryten Close, defensive back Antonio Watts, punter Jacob Baker, receiver Payton Cook, tight end Hamilton Atkins and defensive lineman Sam Dawson. Louisville's losses are mostly depth and the offensive line. The remaining risk is a probable player who is not at full speed, and Thurman is the one that would hurt most.</p></li>
+  </ol>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="sec-head"><div><div class="sec-no">13</div><h2>How I Think the Game Breaks Down</h2></div></div>
+  <p class="lede">I think this is a high-scoring game in which Louisville wins the yardage and North Carolina wins the possessions that matter, and the Tar Heels win it in the final five minutes.</p>
+
+  <div class="compare" style="margin-bottom:24px">
+    <h3>My projected line score</h3>
+    <table class="ls">
+      <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>Final</th></tr></thead>
+      <tbody>
+        <tr class="l"><td>Louisville</td><td>7</td><td>10</td><td>7</td><td>7</td><td class="f">31</td></tr>
+        <tr class="u"><td>North Carolina</td><td>7</td><td>10</td><td>7</td><td>10</td><td class="f">34</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:4px">Tied 7-7 after one, 17-17 at the half, 24-24 after three.</div>
+  </div>
+
+  <p><strong>First quarter.</strong> Both offenses should score early. Louisville tends to open with a script that attacks the edges with option looks, swing passes and end-arounds, as it did against Stanford, and those are hard looks for any defense to handle on the first series. I expect Louisville to score on one of its first two drives, probably with an Isaac Brown or Tre Richardson explosive play and a Kienholz touchdown run. UNC's scripted first drives are where the offense tends to look its best, and Edwards should find the rhythm he had at UConn and Miami, working Shipp and Thurman on short and intermediate routes. I have it 7-7 after one quarter.</p>
+  <p><strong>Second quarter.</strong> The second quarter is where the game's identity gets set. Louisville's offense scores quickly, which means UNC has to keep answering, and the Tar Heels have done that well recently, scoring 21 in the second quarter at UConn, the most in any quarter this season. The key sequences are on third down. If Lewis and Abou Jaoude get Kienholz off his spot on third and medium, Louisville punts and UNC's defense survives. If they do not, the Cardinals score on every drive that crosses midfield. I think it is a mix, and the teams go into halftime tied at 17.</p>
+  <p><strong>Third quarter.</strong> The third quarter is where Louisville's yardage edge shows. The Cardinals will have the better of the run game, finishing with something like 200 rushing yards on 5 yards a carry, and Kienholz will find a big play or two against a secondary that has given up chunk plays all year. The Tar Heels' counter is the turnover. This is the single most important assumption in my pick: I have UNC forcing two turnovers, one of them a Kienholz interception under pressure and the other a ball punched loose by Seelmann or Hickman-Collins, and converting at least one into a touchdown. That makes it 24-24 after three.</p>
+  <p><strong>Fourth quarter.</strong> The fourth quarter is a Belichick quarter. UNC ran 16 plays and more than six minutes off the clock on one drive at UConn and held the ball for 36:23 overall, and a couple of drives like that wear on a Louisville defense that is built on rotation and speed. Thurman, who is probable and whom I am assuming plays, scores his ninth touchdown to put UNC up 31-24 with about eight minutes left, which breaks the all-time UNC tight end record. Louisville answers with a quick touchdown drive, because it always does, to make it 31-31. The Tar Heels then take the ball and, rather than trade possessions again, run a long, clock-eating drive that finishes with a Verhoff field goal and leaves Louisville with a single possession and no time. Final: UNC 34, Louisville 31.</p>
+  <div class="callout"><p><b>The honest version of the argument.</b> The market has Louisville as the favorite by 3.5, with moneylines near -165 for the Cardinals, and prediction markets give them roughly a 60 percent chance. That is a reasonable read: Louisville has the better offense, the more explosive players, a four-game winning streak by an average margin of nearly 22 points, and the better record. UNC's case is not that it is a better team. It is that the Tar Heels have the better linebackers and a slightly better secondary, a defense that has produced turnovers in bursts, an offense that is good at converting the red zone, a kicker they trust, and an opponent whose defense gives up points and yards in bunches. Also, a score of 34-31 is 65 total points, more than four points above the 60.5 posted total, so my pick also implies the over.</p></div>
+</section>
+
+<!-- PICK -->
+<section id="pick">
+  <div class="sec-head"><div><div class="sec-no">14</div><h2>Score Prediction</h2></div></div>
+  <div class="pick">
+    <div class="lab">The pick</div>
+    <div class="score"><span class="t">UNC</span><span class="n u">34</span><span class="dash">&ndash;</span><span class="n l">31</span><span class="t">Louisville</span></div>
+    <div class="meta">A pick against the market &middot; implies 65 total points vs a 60.5 line</div>
+  </div>
+  <p>This is a pick against the market, so it is worth being plain about what has to be true. UNC has to win the turnover margin, probably by two, because Louisville will out-gain it on the ground and through the air. That is the shakiest assumption in the pick, since Louisville is +7 on the season and UNC is -1. The Tar Heels' tackles have to survive Lubin and Thompson long enough for Edwards to keep his completion percentage near 75 on short and intermediate throws. Thurman has to be the mismatch he has been for most of the season, and UNC has to turn red-zone trips into touchdowns rather than field goals. And the defense has to make Kienholz win from the pocket on third down, because if it does not, Louisville's explosiveness makes 31 a floor rather than a ceiling.</p>
+  <p>If those things happen, a 34-31 game is realistic: UNC has averaged 34.3 points in its last three games, and Louisville has allowed 24 or more in four of its last six. If they do not, the more likely result is a Louisville win in the high 30s. I would put the Tar Heels' real chances at roughly the 40 percent the market implies, and the case for this pick is that this particular matchup is a better fit for UNC's strengths than the record suggests.</p>
+  <div class="callout"><p><b>Availability check.</b> The Friday availability update removes most of the uncertainty. Thurman is probable and I am assuming he plays, which keeps the red-zone and seam-route matchups I lean on intact; if he were out, the 34-point scenario would get much harder to reach. Waters is also probable, while Louisville's list is mostly offensive-line depth plus its punter. Isaac Brown and McCoy are both probable and assumed to play, so Louisville's skill players look largely intact. The ACC's final report comes two hours before kickoff.</p></div>
+</section>
+
+
+
+</main>
+
+<footer>
+  UNC vs Louisville pre-game breakdown &middot; Matthew Zammit &middot; Independent analysis, not affiliated with either program.
+</footer>
+
+<button class="top" id="top" aria-label="Back to top">&uarr;</button>
+
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  var topBtn=document.getElementById('top');
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var pct=max>0?(h.scrollTop/max)*100:0;
+    bar.style.width=pct+'%';
+    topBtn.classList.toggle('show',h.scrollTop>900);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  var links=[].slice.call(document.querySelectorAll('#navlinks a'));
+  var map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var sections=[].slice.call(document.querySelectorAll('main section'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active')});
+          var a=map[e.target.id];
+          if(a){
+            a.classList.add('active');
+            var c=a.parentElement;
+            c.scrollTo({left:a.offsetLeft-c.clientWidth/2+a.clientWidth/2,behavior:'smooth'});
+          }
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    sections.forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
